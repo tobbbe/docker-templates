@@ -13,13 +13,19 @@ gcloud config list
 ```
 
 ```sh
-# set `$PROJECT` in shell
+# set project for gcloud CLI
 gcloud config set project "my-project"
-```
 
-```sh
-# get `$PROJECT` in shell
+# get project from gcloud CLI
 gcloud config get-value core/project
+
+# set $PROJECT alias to be able to use below
+
+## set from gcloud CLI
+PROJECT=$(gcloud config get-value core/project 2> /dev/null)
+
+## set from brain
+PROJECT=my-project
 ```
 
 ## Build and deploy containers
