@@ -1,0 +1,19 @@
+{
+  "name": "projectname",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "publish": "gcloud builds submit --tag gcr.io/$PROJECT/container-name && gcloud run deploy $PROJECT --image gcr.io/$PROJECT/container-name --platform managed --region europe-north1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "*"
+  }
+}
