@@ -1,36 +1,49 @@
 
-## setup
-```
-gcloud config set compute/region us-west1
+## Setup
+
+```sh
+# Setting default configurations for your gcloud CLI prevents the Y/n prompt
+gcloud config set compute/region europe-west1
 gcloud config set run/platform managed
 ```
-Setting default configurations for your gcloud CLI prevents the Y/n prompt
 
-`gcloud config list`
-See your existing configs
+```sh
+# See your existing configs
+gcloud config list
+```
 
-`gcloud config set project "my-project"`
-set `$PROJECT` in shell
+```sh
+# set `$PROJECT` in shell
+gcloud config set project "my-project"
+```
 
-`gcloud config get-value core/project`
-get `$PROJECT` in shell
+```sh
+# get `$PROJECT` in shell
+gcloud config get-value core/project
+```
 
-## build and deploy containers
+## Build and deploy containers
 
 ### Google cloud
-1. `gcloud builds submit --tag gcr.io/$PROJECT/container-name`
-build container with google cloud build and put it in google cloud container registry (gcr)
+```sh
+# 1. build container with google cloud build and put it in google cloud container registry (gcr)
+gcloud builds submit --tag gcr.io/$PROJECT/container-name
 
-2. `gcloud run deploy $PROJECT --image gcr.io/$PROJECT/container-name --platform managed --region europe-west1`
-"deploy image" == tell google cloud run which image to run
+# 2. "deploy image" == tell google cloud run which image to run
+gcloud run deploy $PROJECT --image gcr.io/$PROJECT/container-name --platform managed --region europe-west1
+```
 
 ### Docker
-1. `docker build -t gcr.io/$PROJECT/container-name .`
-build container with docker cli
+```sh
+# 1. build container with docker cli
+docker build -t gcr.io/$PROJECT/container-name .
 
-2. `docker push gcr.io/$PROJECT/container-name`
-push container to cloud container registry (gcr)
+# 2. push container to cloud container registry (gcr)
+docker push gcr.io/$PROJECT/container-name
+```
 
-## problems
-`gcloud auth configure-docker`
-fix auth problem
+## Problems
+```sh
+# fix auth problem
+gcloud auth configure-docker
+```
