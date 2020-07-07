@@ -37,6 +37,8 @@ gcloud builds submit --tag gcr.io/$PROJECT/container-name
 
 # 2. "deploy image" == tell google cloud run which image to run
 gcloud run deploy $PROJECT --image gcr.io/$PROJECT/container-name --platform managed --region europe-west1
+
+# 3. to update project (ex web page), run 1 and 2 again
 ```
 
 ### Docker
