@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "publish": "PROJECT=my-project && CONTAINERNAME=container-name && gcloud builds submit --tag gcr.io/$PROJECT/$CONTAINERNAME && gcloud run deploy $PROJECT --image gcr.io/$PROJECT/$CONTAINERNAME"
+    "publish": "PROJECT=project-name && SERVICE=service-name && gcloud builds submit --tag gcr.io/$PROJECT/$SERVICE && gcloud run deploy $SERVICE --image gcr.io/$PROJECT/$SERVICE"
   },
   "author": "",
   "license": "ISC",

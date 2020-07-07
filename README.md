@@ -14,7 +14,7 @@ gcloud config list
 
 ```sh
 # set project for gcloud CLI
-gcloud config set project "my-project"
+gcloud config set project "project-name"
 
 # get project from gcloud CLI
 gcloud config get-value core/project
@@ -25,18 +25,19 @@ gcloud config get-value core/project
 PROJECT=$(gcloud config get-value core/project 2> /dev/null)
 
 ## set from brain
-PROJECT=my-project
+PROJECT=project-name
+SERVICENAME=ex-website-name
 ```
 
 ## Build and deploy containers
 
-### Google cloud
+### Google cloud run
 ```sh
 # 1. build container with google cloud build and put it in google cloud container registry (gcr)
-gcloud builds submit --tag gcr.io/$PROJECT/container-name
+gcloud builds submit --tag gcr.io/$PROJECT/$SERVICENAME
 
 # 2. "deploy image" == tell google cloud run which image to run
-gcloud run deploy $PROJECT --image gcr.io/$PROJECT/container-name --platform managed --region europe-west1
+gcloud run deploy $SERVICENAME --image gcr.io/$PROJECT/$SERVICENAME
 
 # 3. to update project (ex web page), run 1 and 2 again
 ```
@@ -44,10 +45,15 @@ gcloud run deploy $PROJECT --image gcr.io/$PROJECT/container-name --platform man
 ### Docker
 ```sh
 # 1. build container with docker cli
-docker build -t gcr.io/$PROJECT/container-name .
+docker build -t gcr.io/$PROJECT/$SERVICENAME .
 
 # 2. push container to cloud container registry (gcr)
-docker push gcr.io/$PROJECT/container-name
+docker push gcr.io/$PROJECT/$SERVICENAME
+
+# 2. "deploy image" == tell google cloud run which image to run
+gcloud run deploy $SERVICENAME --image gcr.io/$PROJECT/$SERVICENAME
+
+# 3. to update project (ex web page), run 1 and 2 again
 ```
 
 ## Problems
