@@ -19,14 +19,13 @@ gcloud config set project "project-name"
 # get project from gcloud CLI
 gcloud config get-value core/project
 
-# set $PROJECT alias to be able to use below
-
-## set from gcloud CLI
-PROJECT=$(gcloud config get-value core/project 2> /dev/null)
-
+# set $PROJECT and $SERVICENAME to be able to use below
 ## set from brain
 PROJECT=project-name
 SERVICENAME=ex-website-name
+
+## set from gcloud CLI
+PROJECT=$(gcloud config get-value core/project 2> /dev/null)
 ```
 
 ## Build and deploy containers
