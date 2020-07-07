@@ -23,7 +23,6 @@ gcloud config get-value core/project
 ## set from brain
 PROJECT=project-name
 SERVICENAME=ex-website-name
-
 ## set from gcloud CLI
 PROJECT=$(gcloud config get-value core/project 2> /dev/null)
 ```
@@ -49,10 +48,10 @@ docker build -t gcr.io/$PROJECT/$SERVICENAME .
 # 2. push container to cloud container registry (gcr)
 docker push gcr.io/$PROJECT/$SERVICENAME
 
-# 2. "deploy image" == tell google cloud run which image to run
+# 3. "deploy image" == tell google cloud run which image to run
 gcloud run deploy $SERVICENAME --image gcr.io/$PROJECT/$SERVICENAME
 
-# 3. to update project (ex web page), run 1 and 2 again
+# 4. to update project (ex web page), run 1, 2 and 3 again
 ```
 
 ## Problems
