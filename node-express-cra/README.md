@@ -3,11 +3,8 @@
 ## Setup
 ```sh
 # init cra app
-cd client
-npx create-react-app .
-
-# go back to root
-cd ..
+# folder must be named "client"
+npx create-react-app client
 
 # init server app
 cd server
