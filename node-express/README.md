@@ -12,4 +12,4 @@ docker-compose up --build
 ```
 
 ## Deploy
-[Examples](https://github.com/tobbbe/docker-templates#build-and-deploy-containers)
+[How to deploy?](https://github.com/tobbbe/docker-templates#build-and-deploy-containers)

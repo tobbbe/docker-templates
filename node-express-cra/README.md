@@ -21,4 +21,6 @@ docker-compose up --build
 
 ## Deploy
 Building the container with Dockerfile will build cra and server app for production.
-[Examples](https://github.com/tobbbe/docker-templates#build-and-deploy-containers)
+
+
+[How to deploy?](https://github.com/tobbbe/docker-templates#build-and-deploy-containers)
