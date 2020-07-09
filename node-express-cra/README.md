@@ -3,7 +3,7 @@
 ## Setup
 ```sh
 # init cra app
-# folder must be named "client"
+# folder must be named "client" for build script
 npx create-react-app client
 
 # init server app
@@ -12,8 +12,8 @@ npm install --prefix server
 
 ## Local dev
 Will run (through the docker container) using [concurrently](https://www.npmjs.com/package/concurrently):
-- server app with nodemon on port 8080
-- client app (cra) in dev mode on port 3000
+- server app with nodemon on [http://localhost:8080](http://localhost:8080)
+- client app (cra) in dev mode on [http://localhost:3000](http://localhost:3000) port 3000
 
 ```sh
 docker-compose up --build
