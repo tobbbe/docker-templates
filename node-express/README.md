@@ -12,4 +12,4 @@ docker-compose up --build
 ```
 
 ## Deploy
-[Google cloud run](https://github.com/tobbbe/docker-templates#google-cloud-run)
+[Examples](https://github.com/tobbbe/docker-templates#build-and-deploy-containers)
