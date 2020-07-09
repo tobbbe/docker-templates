@@ -7,8 +7,7 @@
 npx create-react-app client
 
 # init server app
-cd server
-npm install
+npm install --prefix server
 ```
 
 ## Local dev
