@@ -36,8 +36,6 @@ gcloud builds submit --tag gcr.io/$PROJECT/$SERVICENAME
 
 # 2. "deploy image" == tell google cloud run which image to run
 gcloud run deploy $SERVICENAME --image gcr.io/$PROJECT/$SERVICENAME
-
-# 3. to update project (ex web page), run 1 and 2 again
 ```
 
 ### Docker
@@ -50,8 +48,6 @@ docker push gcr.io/$PROJECT/$SERVICENAME
 
 # 3. "deploy image" == tell google cloud run which image to run
 gcloud run deploy $SERVICENAME --image gcr.io/$PROJECT/$SERVICENAME
-
-# 4. to update project (ex web page), run 1, 2 and 3 again
 ```
 
 ## Problems

@@ -3,11 +3,13 @@ version: '3'
 services:
   app:
     build:
-      context: .
+      context: ./app
+      args:
+        - NODE_ENV=development
     volumes:
-      - ./:/usr/src/app
-    environment:
-      - NODE_ENV=development
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules # do not overwrite the containers node_modules with local
     ports:
       - "8080:8080"
-    command: npm run dev # overwrites RUN in Dockerfile
+      - "9229:9229" # expose the debug port
+    command: npm run dev
