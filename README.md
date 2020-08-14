@@ -30,6 +30,8 @@ PROJECT=$(gcloud config get-value core/project 2> /dev/null)
 ## Build and deploy containers
 
 ### Google cloud run
+Dont forget to first set gcloud cli project!
+
 ```sh
 # 1. build container with google cloud build and put it in google cloud container registry (gcr)
 gcloud builds submit --tag gcr.io/$PROJECT/$SERVICENAME
