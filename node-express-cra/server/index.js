@@ -3,14 +3,9 @@ const app = express();
 const path = require('path');
 
 const dev = process.env.NODE_ENV !== 'production';
+const webappPath = path.join(__dirname, '/webapp');
 
 app.use(express.json())
-
-app.use('/static', express.static(path.join(__dirname, '/build/static')))
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 app.get('/test', (req, res) => {
   res.send('ok')
@@ -19,6 +14,11 @@ app.get('/test', (req, res) => {
 app.post('/post', function (req, res) {
   console.log(req.body)
   res.send(req.body)
+});
+
+app.use(express.static(webappPath))
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(webappPath, 'index.html'));
 });
 
 const port = process.env.PORT || 8080;

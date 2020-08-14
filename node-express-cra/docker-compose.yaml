@@ -1,14 +1,27 @@
 version: '3'
 
 services:
-  app:
+  webapp:
+    stdin_open: true
     build:
-      context: .
+      context: ./client
+      args:
+        - NODE_ENV=development
     volumes:
-      - ./:/usr/src/app
-    environment:
-      - NODE_ENV=development
+      - ./client/:/usr/src/app
+      - /usr/src/app/node_modules # do not overwrite the containers node_modules with local
+    command: npm start
+    ports:
+      - "3000:3000"
+  server:
+    build:
+      context: ./server
+      args:
+        - NODE_ENV=development
+    volumes:
+      - ./server/:/usr/src/app
+      - /usr/src/app/node_modules # do not overwrite the containers node_modules with local
     ports:
       - "8080:8080"
-      - "3000:3000"
-    command: npx concurrently 'npm run --prefix server dev' 'npm start --prefix client' # overwrites RUN in Dockerfile
+      - "9229:9229" # expose the debug port
+    command: npm run dev

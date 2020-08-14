@@ -1,26 +1,17 @@
-# build webapp for production
-FROM node:12.18.2-alpine as webapp-build
-WORKDIR /app
-COPY ./client/package*.json ./
-RUN npm install
-COPY ./client .
-RUN npm run build
-
-
 FROM node:12.18.2-alpine
+
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
-WORKDIR /usr/src/app
 
+# build server app for prod
+WORKDIR /usr/src/app
 # Copy application dependency manifests to the container image.
 # A wildcard is used to ensure both package.json AND package-lock.json are copied.
 # Copying this separately prevents re-running npm install on every code change.
-COPY ./server/package*.json ./
-
 # if NODE_ENV=production no dev-dependency modules will be installed
+COPY ./package*.json ./
 RUN npm install
+COPY . .
 
-COPY ./server .
-COPY --from=webapp-build /app/build /usr/src/app/webapp
-
+# Run the web service on container startup.
 CMD [ "npm", "start" ]
