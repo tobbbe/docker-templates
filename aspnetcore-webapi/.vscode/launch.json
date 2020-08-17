@@ -9,7 +9,7 @@
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build",
-        "program": "${workspaceFolder}/src/bin/Debug/netcoreapp3.1/mittlager-api.dll",
+        "program": "${workspaceFolder}/src/bin/Debug/netcoreapp3.1/app.dll",
         "args": [],
         "cwd": "${workspaceFolder}/src",
         "stopAtEntry": false,
@@ -37,7 +37,7 @@
         "request": "launch",
         "preLaunchTask": "docker-run: debug",
         "netCore": {
-            "appProject": "${workspaceFolder}/src/mittlager-api.csproj"
+            "appProject": "${workspaceFolder}/src/app.csproj"
         }
     }
 ]

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace mittlager_api.Controllers
+namespace App.Controllers
 {
     [ApiController]
     [Route("[controller]")]

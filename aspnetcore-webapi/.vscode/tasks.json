@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/mittlager-api.csproj",
+                "${workspaceFolder}/src/app.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/src/mittlager-api.csproj",
+                "${workspaceFolder}/src/app.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/src/mittlager-api.csproj",
+                "${workspaceFolder}/src/app.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -45,14 +45,14 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "mittlagerapi:dev",
+                "tag": "netcorewebapi:dev",
                 "target": "base",
                 "dockerfile": "${workspaceFolder}/src/Dockerfile",
                 "context": "${workspaceFolder}/src",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/src/mittlager-api.csproj"
+                "appProject": "${workspaceFolder}/src/app.csproj"
             }
         },
         {
@@ -62,13 +62,13 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "mittlagerapi:latest",
+                "tag": "netcorewebapi:latest",
                 "dockerfile": "${workspaceFolder}/src/Dockerfile",
                 "context": "${workspaceFolder}/src",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/src/mittlager-api.csproj"
+                "appProject": "${workspaceFolder}/src/app.csproj"
             }
         },
         {
@@ -79,7 +79,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/src/mittlager-api.csproj",
+                "appProject": "${workspaceFolder}/src/app.csproj",
                 "enableDebugging": true
             }
         },
@@ -91,7 +91,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/src/mittlager-api.csproj"
+                "appProject": "${workspaceFolder}/src/app.csproj"
             }
         }
     ]

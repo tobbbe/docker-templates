@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>mittlager_api</RootNamespace>
+    <RootNamespace>App</RootNamespace>
     <UserSecretsId>37e5cc6fce2d6a309be07d60d87635b0</UserSecretsId>
   </PropertyGroup>
 </Project>

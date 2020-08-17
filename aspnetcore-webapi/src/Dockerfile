@@ -37,4 +37,4 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 ENV DOTNET_RUNNING_IN_CONTAINER=true
 
-ENTRYPOINT ["dotnet", "mittlager-api.dll"]
+ENTRYPOINT ["dotnet", "app.dll"]

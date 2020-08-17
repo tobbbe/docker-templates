@@ -26,8 +26,8 @@ Choose `Docker .NET Core Launch` in vscode debug menu
 ### Run in docker container
 ```sh
 cd src
-docker build -t mittlager-api . --no-cache
-docker run --rm -p 8080:8080 mittlager-api
+docker build -t netcorewebapi . --no-cache
+docker run --rm -p 8080:8080 netcorewebapi
 ```
 - to(local machine):from(container port)
 - make sure port 80 is exposed in Dockerfile

@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "mittlager_api": {
+    "App": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
