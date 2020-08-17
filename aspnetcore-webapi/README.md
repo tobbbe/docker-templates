@@ -3,7 +3,7 @@ because im not able to setup `dotnet watch run` and debugger with docker.\
 maybe because rebuilding binaries requires to stop/build/start of the debugger
 
 ## Local environment
-i.e not using production docker container environment. But easy to debug and can use watch/reload.
+i.e using local runtime/sdk, not using production docker container environment. Easy to debug and can use watch/reload.
 
 ### Run from terminal
 ```sh
