@@ -3,11 +3,11 @@ version: '3'
 services:
   app:
     build:
-      context: ./app
+      context: ./src
       args:
         - NODE_ENV=development
     volumes:
-      - ./app:/usr/src/app
+      - ./src:/usr/src/app
       - /usr/src/app/node_modules # do not overwrite the containers node_modules with local
     ports:
       - "8080:8080"

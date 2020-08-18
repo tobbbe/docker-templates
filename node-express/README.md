@@ -11,7 +11,7 @@ Debug with vscode ("Docker: Attach to Node"). Make sure .vscode/launch.json with
 ## Deploy
 ```sh
 # deploy to gcloud
-npm run publish:gcloud --prefix app
+npm run publish:gcloud --prefix src
 ```
 
 [Read more how to deploy](https://github.com/tobbbe/docker-templates#build-and-deploy-containers)

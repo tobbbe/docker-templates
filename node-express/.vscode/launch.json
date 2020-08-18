@@ -10,7 +10,7 @@
       "request": "attach",
       "port": 9229,
       "address": "localhost",
-      "localRoot": "${workspaceFolder}/app",
+      "localRoot": "${workspaceFolder}/src",
       "remoteRoot": "/usr/src/app",
       "protocol": "inspector",
       "restart": true
